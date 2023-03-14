@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<html>
+    <head>
+        <title>Apply</title>
+        <link rel="stylesheet"  href="../css/application.css">
+        <div id="nav_bar">
+            <img src="../assets/WisconsinWombats.png" alt="Logo" id="center" style="padding-top: 40px;">
+            <p p style="text-align: center;padding-top: 50px;margin: 0;">
+                <a href="index">Home</a>
+                |
+                <a href="schedule">Schedule</a>
+                |
+                <a href="application">Application</a>
+            </p>
+        </div>
+        <div id="nav_blackbar"></div>
+        <style>
+            #apply_form {
+                padding-right: 800px;
+                padding-top: 50px;
+                font-size: 20px;
+                text-align: right;
+            }
+            #apply_form_title{
+                font-size: 40px;
+                font-weight: bold;
+            }
+            .input {
+                padding-right: 30px;
+                padding-bottom: 20px;
+            }
+            #submit {
+                margin-right: 70px;
+                height: 60px;
+                width: 150px;
+            }
+        </style>
+    </head>
+    <body>
+        <form id="form" th:action="@{/new}" method="post" th:object="${applicant}">
+            <div id="apply_form">
+                <p id="apply_form_title">Application Form</p>
+                <div class="input">
+                    <label for="fname">First Name: </label>
+                    <input id="fname" th:field="*{firstName}" name="First Name" type="text">
+                </div>
+                <div class="input">
+                    <label for="lname">Last Name: </label>
+                    <input id="lname" th:field="*{lastName}" name="Last Name" type="text">
+                </div>
+                <div class="input">
+                    <label for="email">Email Address: </label>
+                    <input id="email" th:field="*{email}" name="Email" type="text">
+                </div>
+                <div class="input" style="padding-right: 30px;">
+                    <label for="position">Position: </label>
+                    <select id="position" th:field="*{position}" name="Position" style="width: 149px">
+                        <option value="pitcher">Pitcher</option>
+                        <option value="catcher">Catcher</option>
+                        <option value="1st">1st Base</option>
+                        <option value="2nd">2nd Base</option>
+                        <option value="shortstop">Shortstop</option>
+                        <option value="3rd">3rd Base</option>
+                        <option value="outfielder">Outfielder</option>
+                        <option value="" disabled selected hidden>Select your option</option>
+                    </select>
+                </div>
+                <div class="input">
+                    <label for="password">Password: </label>
+                    <input id="password" th:field="*{password}" name="Password" type="password" placeholder="">
+                </div>
+                <div class="input">
+                    <label for="confirm_password">Confirm Password: </label>
+                    <input id="confirm_password" name="Confirm Password" type="password" placeholder="">
+                </div>
+                <div>
+                    <button type="submit" id="submit">Submit</button>
+                </div>
+            </div>
+        </form>
+        <script src="../js/new_app.js"></script>
+    </body>
+</html>
