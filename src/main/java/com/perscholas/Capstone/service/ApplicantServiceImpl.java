@@ -38,4 +38,8 @@ public class ApplicantServiceImpl implements ApplicantService {
 
         applicantRepository.save(applicant);
     }
+
+    public Applicant getApplicantByEmailAndPassword(String email, String password) {
+        return applicantRepository.findApplicantByEmailAndPassword(email, password);
+    }
 }

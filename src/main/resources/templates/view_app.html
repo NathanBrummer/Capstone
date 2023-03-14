@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
 <html>
     <head>
         <title>View Application</title>
@@ -19,17 +20,17 @@
         <div id="top_text">
         <text>Application Information</text>
         </div>
-        <div id="information">
+        <div id="information" th:object="${applicant}">
             <text>
-                First name:
+                First name: <text th:text="${applicant.getFirstName()}"></text>
                 <br><br>
-                Last name:
+                Last name: <text th:text="${applicant.getLastName()}"></text>
                 <br><br>
-                Email:
+                Email: <text th:text="${applicant.getEmail()}"></text>
                 <br><br>
-                Position:
+                Position: <text th:text="${applicant.getPosition()}"></text>
                 <br><br>
-                Password:
+                Password: <text th:text="${applicant.getPassword()}"></text>
             </text>
         </div>
     </body>

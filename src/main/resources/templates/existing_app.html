@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
 <html>
     <head>
         <title>View Application</title>
@@ -18,15 +19,15 @@
     <body>
         <br><br><br><br><br>
         <text id="search_text">Search for existing application</text>
-        <div id="search">
+        <div id="search" th:action="@{/new}" method="post" th:object="${applicant}">
             <br>
             <label class="search_function">Enter email:</label>
             <br>
-            <input type="text" placeholder="" class="search_function">
+            <input type="text" th:field="*{email}" placeholder="" class="search_function">
             <br><br>
             <label class="search_function">Enter password:</label>
             <br>
-            <input type="password" placeholder="" class="search_function">
+            <input type="password" th:field="*{password}" placeholder="" class="search_function">
             <br><br>
             <button id="search_button" onclick="window.location.href= 'view'">Search</button>
         </div>
