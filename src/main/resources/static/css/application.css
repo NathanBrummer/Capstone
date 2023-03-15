@@ -41,6 +41,11 @@ a:active {
     width: 200px;
     height: 70px;
 }
+#new_staff {
+    margin-top: 50px;
+    width: 200px;
+    height: 70px;
+}
 #existing_app {
     margin-top: 50px;
     width: 200px;

@@ -19,7 +19,7 @@
     <body>
         <br><br><br><br><br>
         <text id="search_text">Search for existing application</text>
-        <div id="search" th:action="@{/new}" method="post" th:object="${applicant}">
+        <form id="search" th:action="@{/view}" method="post" th:object="${applicant}">
             <br>
             <label class="search_function">Enter email:</label>
             <br>
@@ -29,7 +29,7 @@
             <br>
             <input type="password" th:field="*{password}" placeholder="" class="search_function">
             <br><br>
-            <button id="search_button" onclick="window.location.href= 'view'">Search</button>
-        </div>
+            <button type="submit" id="search_button">Search</button>
+        </form>
     </body>
 </html>

@@ -38,7 +38,7 @@
         </style>
     </head>
     <body>
-        <form id="form" th:action="@{/new}" method="post" th:object="${applicant}">
+        <form id="form" th:action="@{/new_staff}" method="post" th:object="${staff}">
             <div id="apply_form">
                 <p id="apply_form_title">Application Form</p>
                 <div class="input">
@@ -53,19 +53,6 @@
                     <label for="email">Email Address: </label>
                     <input id="email" th:field="*{email}" name="Email" type="text">
                 </div>
-                <div class="input" style="padding-right: 30px;">
-                    <label for="position">Position: </label>
-                    <select id="position" th:field="*{position}" name="Position" style="width: 149px">
-                        <option value="pitcher">Pitcher</option>
-                        <option value="catcher">Catcher</option>
-                        <option value="1st">1st Base</option>
-                        <option value="2nd">2nd Base</option>
-                        <option value="shortstop">Shortstop</option>
-                        <option value="3rd">3rd Base</option>
-                        <option value="outfielder">Outfielder</option>
-                        <option value="" disabled selected hidden>Select your option</option>
-                    </select>
-                </div>
                 <div class="input">
                     <label for="password">Password: </label>
                     <input id="password" th:field="*{password}" name="Password" type="password" placeholder="">
@@ -79,6 +66,6 @@
                 </div>
             </div>
         </form>
-        <script src="../js/new_app.js"></script>
+        <script src="../js/new_staff_app.js"></script>
     </body>
 </html>

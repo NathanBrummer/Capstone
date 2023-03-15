@@ -34,8 +34,8 @@ public class ApplicantController {
         return "new_app";
     }
 
-    @PostMapping("/new")
-    public String submitCompose(@ModelAttribute("applicant") Applicant applicant,Model model){
+    @PostMapping({"/new"})
+    public String submitApp(@ModelAttribute("applicant") Applicant applicant,Model model){
         log.info(applicant.toString());
         applicantRepository.save(applicant);
         return "new_app";
@@ -50,14 +50,16 @@ public class ApplicantController {
 
     @PostMapping({"/existing"})
     public String search(@ModelAttribute("applicant") Applicant applicant, Model model) {
+        log.info("THIS IS RUNNING");
         foundApp = applicantServiceImpl.getApplicantByEmailAndPassword(applicant.getEmail(),applicant.getPassword());
-        log.info(applicant.toString());
+        log.info(applicant.getFirstName());
         return "view_app";
     }
 
     @GetMapping({"/view"})
     public String viewApp(Model model) {
-        model.addAttribute("applicant", foundApp);
+        Applicant applicant = new Applicant();
+        model.addAttribute("applicant", applicant);
         return "view_app";
     }
 }
